@@ -1,0 +1,6 @@
+wget
+numpy
+pandas
+bs4
+faker
+openpyxls
