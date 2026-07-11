@@ -2,7 +2,7 @@
 
 In this module, we're going to learn how to take the Python syntax we learned and give it legs.
 
-## Session Setup
+# Session Setup
 During this session, we're going to utilize more of the features in our Google Colab environment. If you utilized colab for the first session's notebook, you can keep that same notebook active. If not, you can start a new Colab session by following this link*: [New Notebook](colab.new)
 
 (**Alternatively, if you chose to set up your local Python coding environment, you can follow along with your local environment. If you're not working with a linux system, then some of the command line inscructions may be different*)
@@ -40,4 +40,17 @@ This `sample_data/` folder contains some popular practice datasets for machine l
 Similarly, we can also list the files that are in a higher level directory than our current working directory by using `ls ..`
 
 <img width="910" height="212" alt="image" src="https://github.com/user-attachments/assets/17d60280-d33d-4349-9270-34319c73fb57" />
+
+## Download the practice files by cloning the workshop repo
+
+# Creating our first script:
+
+- Start with blank .py file
+- Run basic lines of code
+- add functions
+- error handling + try/except
+- look at example helper script
+- import script functions as module
+- build new script on top of it
+- argparse
 
