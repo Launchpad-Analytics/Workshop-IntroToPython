@@ -44,6 +44,48 @@ Similarly, we can also list the files that are in a higher level directory than 
 ## Download the practice files by cloning the workshop repo
 
 # Creating our first script:
+In this context, a script is a file that houses a series of Python commands to be carried out in a sequential order... (TODO: Finish intro)
+
+Using our same terminal window, we're going to create an empty python file with the following command:
+
+```bash
+touch good_morning.py
+```
+
+After a rief moment, your new python file should appear in the files list on the left. Double-click the script file to open it in a new tab. The terminal tab will be hidden by this new file, but you can drag it down below the script file to split the window if it suits your preference:
+
+<img width="1916" height="938" alt="image" src="https://github.com/user-attachments/assets/d79e2f57-fe6b-482a-9f42-5a5eb826e338" />
+
+To start, we're going to create as basic of a script as we can. We're going to create a single string variable `name`, and then print a custom greeting message using whatever name is passed to that variable:
+
+```python title
+# good_morning.py
+
+name = "Kelly"
+
+print("Good Morning, " + name + "!")
+```
+Next, we're going to run our script by running this command in our terminal:
+
+```
+python good_morning.py
+```
+
+After running, out output should look like this:
+
+<img width="362" height="142" alt="image" src="https://github.com/user-attachments/assets/d9d9a82b-94f8-407e-a989-726c0bfc59d0" />
+
+There's often many different ways to achieve the same result in programming, and each method may be better suited for what you want to accomplish. The concatenating of the text strings to build our message works well, but we can also use what's called an **f-string** to create better string templates and embed values directly. We're going to do that now with our print statement:
+
+```python
+name = "Kelly"
+
+print(f"Good Morning, {name}!")
+```
+
+# Example Build: Personal Assistant Wake-up Message
+<img width="60%" height="30%" alt="image" src="https://github.com/user-attachments/assets/89cf51de-70bd-4a78-858f-db74ea7deb64" />
+
 
 - Start with blank .py file
 - Run basic lines of code
