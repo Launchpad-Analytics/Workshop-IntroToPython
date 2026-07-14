@@ -24,7 +24,7 @@ When you're done, your Colab window might look something like this:
 <img width="1918" height="944" alt="20260711-0252-35 7921598" src="https://github.com/user-attachments/assets/af2a705c-5b6c-48ab-a9c8-e539975d7113" />
 
 ## What is a terminal? Quick command line demo
-A terminal is a text-based user interface that allows a user to access a computer system's resources... (TODO: FINISH EXPLANATION)
+A terminal is a text-based user interface that lets you interact with your computer by typing commands instead of clicking through menus. It is especially useful for running scripts, navigating folders, and managing files in a fast and repeatable way.
 
 Here are some basic bash commands that you can run from the command line:
 
@@ -52,7 +52,7 @@ Similarly, we can also list the files that are in a higher level directory than 
 ## Download the practice files by cloning the workshop repo
 
 # Creating our first script:
-In this context, a script is a file that houses a series of Python commands to be carried out in a sequential order... (TODO: Finish intro)
+In this context, a script is a file that stores Python instructions so they can be run in order whenever needed. Instead of typing commands one at a time in a notebook or terminal, a script lets you save and reuse a full workflow in a single file.
 
 Using our same terminal window, we're going to create an empty python file with the following command:
 
@@ -133,7 +133,7 @@ from zoneinfo import ZoneInfo
 ```
 
 ### What is a datetime?
-TODO
+A datetime is a Python object that represents both a date and a time, making it possible to work with calendar and clock information in a structured way. This is helpful when you want to display the current date, compare times, or format output for users.
 
 ### Using `strftime` to format the date and time
 
@@ -289,7 +289,7 @@ In this function, the code makes it easy to read exactly what's happening to cle
 `return [headline.strip() for headline in headlines]`
 
 ### Discussion: Code Readability vs. Efficiency
-TODO
+Readable code is easier for people to understand and maintain, while efficient code is often more concise and avoids unnecessary repetition. In practice, the best solution is usually a balance between the two: write code that is clear first, then improve it when needed to make it simpler or faster.
 
 ## Code Improvement: Message List
 
