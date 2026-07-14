@@ -156,8 +156,9 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import time
 
-def greeting(name):
 
+def greeting(name):
+  # Build and return the greeting message.
   greeting = f"Good Morning, {name}!"
 
   now_ny = datetime.now(ZoneInfo("America/New_York"))
@@ -242,14 +243,17 @@ Copy the following two functions and add them to your script under the `time_and
 
 ```python
 def get_weather(location):
+  # Use the weather helper functions to create a weather update message.
   weather_info = None
   weather_message = f"The current temperature in {location} is {None} with a high of {None} and a low of {None}"
   return weather_message
 
+
 def get_headlines():
+  # Read the saved headlines from a text file and clean each line.
   with open('headlines.txt', 'r') as file:
     headlines = file.readlines()
-  
+
   return [headline.strip() for headline in headlines]
 ```
 
@@ -385,15 +389,19 @@ import openmeteo_requests
 import argparse
 from geopy.geocoders import Nominatim
 
+
 def get_city_latlong(city_name):
+  # Convert a city name into latitude and longitude coordinates.
   geolocator = Nominatim(user_agent="my_city_geocoder")
-  location =  geolocator.geocode(city_name)
+  location = geolocator.geocode(city_name)
   if location:
     return [location.latitude, location.longitude]
   else:
     return None
 
+
 def weather_lookup(coords):
+  # Query the weather API for current and forecast temperatures.
   openmeteo = openmeteo_requests.Client()
 
   url = "https://api.open-meteo.com/v1/forecast"
@@ -406,7 +414,7 @@ def weather_lookup(coords):
     "temperature_unit": "fahrenheit",
   }
 
-  responses = openmeteo.weather_api(url, params = params)
+  responses = openmeteo.weather_api(url, params=params)
 
   current_temp = round(responses[0].Current().Variables(0).Value())
   max_temp = round(float(responses[0].Daily().Variables(0).ValuesAsNumpy().max()))
@@ -414,7 +422,9 @@ def weather_lookup(coords):
 
   return current_temp, max_temp, min_temp
 
+
 def main():
+  # Parse a city name from the command line and print weather results.
   parser = argparse.ArgumentParser()
   parser.add_argument('-c', '--city')
   args = parser.parse_args()
@@ -490,31 +500,38 @@ from get_weather_info import get_city_latlong, weather_lookup
 
 
 def greeting(name):
+  # Build and return the personalized greeting message.
   greeting_message = f"Good Morning, {name}!"
   return greeting_message
 
 
 def time_and_date(timezone):
+  # Get the current date and time for the selected timezone.
   now_ny = datetime.now(ZoneInfo(timezone))
   today = f"Today is {now_ny.strftime('%A, %B %d, %Y')}"
   current_time = f"The time is {now_ny.strftime('%I:%M %p')}"
 
   return [today, current_time]
 
+
 def get_weather(location):
+  # Use the weather helper functions to create a weather update message.
   city_coords = get_city_latlong(location)
-  # weather_info = None
   current_temp, max_temp, min_temp = weather_lookup(city_coords)
   weather_message = f"The current temperature in {location} is {current_temp} with a high of {max_temp} and a low of {min_temp}"
   return weather_message
 
+
 def get_headlines():
+  # Read the saved headlines from a text file and clean each line.
   with open('headlines.txt', 'r') as file:
     headlines = file.readlines()
-  
+
   return [headline.strip() for headline in headlines]
 
+
 def main():
+  # Load user settings and build the full wake-up message list.
   with open("user_settings.json", "r") as file:
     user_settings = json.load(file)
 
