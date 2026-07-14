@@ -1,6 +1,14 @@
-# Functions, Files, and Scripts
+# Module Overview
 
-In this module, we're going to learn how to take the Python syntax we learned and give it legs.
+In this module, we're going to learn how to take the Python syntax we learned and give it legs. So far, we've been working with small snippets of code in notebooks, but real-world Python programs usually live in files and scripts that can be run again and again. In this lesson, we'll explore how to structure code into functions, work with external files, and build scripts that perform useful tasks.
+
+In this module, you will learn:
+
+- How to create and use functions to organize reusable code
+- How to write Python scripts and run them from the terminal
+- How to read data from files and work with that data in your programs
+- How to use modules and imports to add new functionality to your code
+- How to build a small project that combines these ideas into one workflow
 
 # Session Setup
 During this session, we're going to utilize more of the features in our Google Colab environment. If you utilized colab for the first session's notebook, you can keep that same notebook active. If not, you can start a new Colab session by following this link*: [New Notebook](colab.new)
