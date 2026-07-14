@@ -528,3 +528,21 @@ if __name__ == "__main__":
 ```
 
 # Wrapping Up
+
+In this lesson, we took the Python concepts we learned earlier and used them to build a small, real-world script. We saw how functions help us break a task into smaller, reusable pieces, how scripts let us run a sequence of commands from a file, and how modules can be imported to reuse code that already exists.
+
+We also practiced working with files, reading data from external sources, and using lists and loops to make our code more efficient. By returning values from functions instead of only printing them, we made our programs more flexible and easier to build into larger applications. Finally, we explored how to structure a script so it can run as a standalone program while still being organized and easy to understand.
+
+These ideas—functions, files, imports, loops, and good script structure—are the foundation for writing more complex Python programs.
+
+# Continued Learning
+
+Here are some of the main concepts we covered, along with links to learn more about each one:
+
+- Functions: reusable blocks of code that help organize programs. Learn more: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+- Files and input/output: reading from and writing to files in Python. Learn more: https://docs.python.org/3/tutorial/inputoutput.html
+- Modules and imports: using built-in and external code libraries in your scripts. Learn more: https://docs.python.org/3/tutorial/modules.html
+- Lists and loops: working with collections of data and repeating actions efficiently. Learn more: https://docs.python.org/3/tutorial/introduction.html#lists
+- String formatting: building readable messages and output with f-strings. Learn more: https://realpython.com/python-f-strings/
+- Working with dates and times: using the datetime module to handle current time and formatting. Learn more: https://docs.python.org/3/library/datetime.html
+- Script structure and execution: organizing code so it can run as a standalone program. Learn more: https://realpython.com/if-name-main-python/
