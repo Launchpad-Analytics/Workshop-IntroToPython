@@ -423,3 +423,108 @@ def main():
 if __name__ == "__main__":
   main()
 ```
+
+### Importing weather script functions
+We can treat this `get_weather_info.py` script as a module of functions we can use to construct our weather update for the wake-up routine. We need to use both the geolocator function and the function that gets the weather API information, so we will import both functions at the top of our script:
+
+```python
+from get_weather_info import get_city_latlong, weather_lookup
+```
+
+Return to the `get_weather_info()` function from earlier. It's already being passed the `location` as an argument, so we just need to pass it to the `get_city_latlong()` function and save the results to the `city_coords` variable. Additionally, instead of the `weather_info` variable, we actually need 3 separate variables to capture the data coming from the `weather_lookup()` function. We can write a similar line of code to the original script:
+
+```python
+current_temp, max_temp, min_temp = weather_lookup(city_coords)
+```
+
+We now have everything to complete the weather message function, and can plug the `current_temp`, `max_temp`, and `min_temp` variables into the string template. Out new `get_weather()` function should look like this:
+
+```python
+def get_weather(location):
+  city_coords = get_city_latlong(location)
+  # weather_info = None
+  current_temp, max_temp, min_temp = weather_lookup(city_coords)
+  weather_message = f"The current temperature in {location} is {current_temp} with a high of {max_temp} and a low of {min_temp}"
+  return weather_message
+```
+
+Run your `good_morning.py` script to observe the real weather data being returned. Remember that we hard coded the city of Pittsburgh in the list of messages at the bottom, but you've been given some hints to figure out how to make this value more dynamic and user-driven.
+
+### Code Improvement: Dynamic Input of User Data
+
+```python
+with open("user_settings.json", "r") as file:
+    user_settings = json.load(file)
+
+message_list = []
+message_list.append(greeting(user_settings["user_name"]))
+message_list += time_and_date(user_settings["user_time_zone"])
+message_list.append(get_weather(user_settings["user_location"]))
+message_list.append("Here are today's headlines:")
+message_list += get_headlines()
+message_list.append("Have a great day!")
+
+for m in message_list:
+  time.sleep(1)
+  print(m)
+```
+
+### Code Improvement: Last Mile
+When looking at the `get_weather_info.py` script, we talked about the importance of the `if __name__ == "__main__":` expression and the `main()` function in a script, so the last finishing touch we add to this script will be to implement our core logic of constructing our message list within these blocks.
+
+> code checkpoint: `good_morning.py`:
+```python
+from datetime import datetime
+import json
+from zoneinfo import ZoneInfo
+import time
+from get_weather_info import get_city_latlong, weather_lookup
+
+
+def greeting(name):
+  greeting_message = f"Good Morning, {name}!"
+  return greeting_message
+
+
+def time_and_date(timezone):
+  now_ny = datetime.now(ZoneInfo(timezone))
+  today = f"Today is {now_ny.strftime('%A, %B %d, %Y')}"
+  current_time = f"The time is {now_ny.strftime('%I:%M %p')}"
+
+  return [today, current_time]
+
+def get_weather(location):
+  city_coords = get_city_latlong(location)
+  # weather_info = None
+  current_temp, max_temp, min_temp = weather_lookup(city_coords)
+  weather_message = f"The current temperature in {location} is {current_temp} with a high of {max_temp} and a low of {min_temp}"
+  return weather_message
+
+def get_headlines():
+  with open('headlines.txt', 'r') as file:
+    headlines = file.readlines()
+  
+  return [headline.strip() for headline in headlines]
+
+def main():
+  with open("user_settings.json", "r") as file:
+    user_settings = json.load(file)
+
+  message_list = []
+  message_list.append(greeting(user_settings["user_name"]))
+  message_list += time_and_date(user_settings["user_time_zone"])
+  message_list.append(get_weather(user_settings["user_location"]))
+  message_list.append("Here are today's headlines:")
+  message_list += get_headlines()
+  message_list.append("Have a great day!")
+
+  for m in message_list:
+    time.sleep(1)
+    print(m)
+
+
+if __name__ == "__main__":
+  main()
+```
+
+# Wrapping Up
