@@ -1,0 +1,2 @@
+cowsay
+openmeteo_requests
