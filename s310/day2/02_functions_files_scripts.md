@@ -157,7 +157,9 @@ A datetime is a Python object that represents both a date and a time, making it 
 
 Using the `datetime.now()` function, we're going to grab the current datetime (using NYC as our location reference) and save it to a variable called `now_ny`:
 
-`now_ny = datetime.now(ZoneInfo("America/New_York"))`
+```python
+now_ny = datetime.now(ZoneInfo("America/New_York"))
+```
 
 Because `now_ny` is a variable of type `datetime`, it now has all of the methods included in the `datetime` module. One of those methods is the `.strftime()` method, which formats the datetime into a string based on a custom-defined format. The format we want our date to be in is `[Weekday], [Month] [Day], [Year]`, so the format template we're going to pass to `.strftime()` is `'%A, %B %d, %Y'`:
 
