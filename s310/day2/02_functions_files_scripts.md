@@ -54,7 +54,7 @@ Similarly, we can also list the files that are in a higher level directory than 
 In your terminal window, paste and run the following command:
 
 ```bash
-https://github.com/Launchpad-Analytics/Workshop-IntroToPython.git
+git clone https://github.com/Launchpad-Analytics/Workshop-IntroToPython.git
 ```
 
 Run the following command to navigate to the folder containing our lab files for today:
