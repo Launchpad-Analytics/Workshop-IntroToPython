@@ -1,2 +1,4 @@
 cowsay
 openmeteo_requests
+geopy
+tzinfo

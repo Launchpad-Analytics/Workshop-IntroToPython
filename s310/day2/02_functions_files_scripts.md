@@ -51,6 +51,24 @@ Similarly, we can also list the files that are in a higher level directory than 
 
 ## Download the practice files by cloning the workshop repo
 
+In your terminal window, paste and run the following command:
+
+```bash
+https://github.com/Launchpad-Analytics/Workshop-IntroToPython.git
+```
+
+Run the following command to navigate to the folder containing our lab files for today:
+
+```bash
+cd Workshop-IntroToPython/s310/day2/
+```
+
+While you won't need this installation step until later, you can install the requirements now if you choose:
+
+```bash
+pip install -r requirements.txt
+```
+
 # Creating our first script:
 In this context, a script is a file that stores Python instructions so they can be run in order whenever needed. Instead of typing commands one at a time in a notebook or terminal, a script lets you save and reuse a full workflow in a single file.
 

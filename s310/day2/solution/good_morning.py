@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 from zoneinfo import ZoneInfo
 import time
-from s310.day2.get_weather_info import get_city_latlong, weather_lookup
+from get_weather_info import get_city_latlong, weather_lookup
 
 
 def greeting(name):
