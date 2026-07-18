@@ -1,0 +1,3 @@
+mask = (survey_data["Name"] == "Evelyn Rodriguez") & (survey_data['Age'] == 49)
+
+survey_data[mask]
