@@ -8,3 +8,5 @@ openpyxl
 faker
 beautifulsoup4
 wget
+lxml
+pdfplumber
