@@ -78,7 +78,7 @@ Using our same terminal window, we're going to create an empty python file with 
 touch good_morning.py
 ```
 
-After a rief moment, your new python file should appear in the files list on the left. Double-click the script file to open it in a new tab. The terminal tab will be hidden by this new file, but you can drag it down below the script file to split the window if it suits your preference:
+After a brief moment, your new python file should appear in the files list on the left. Double-click the script file to open it in a new tab. The terminal tab will be hidden by this new file, but you can drag it down below the script file to split the window if it suits your preference:
 
 <img width="1916" height="938" alt="image" src="https://github.com/user-attachments/assets/d79e2f57-fe6b-482a-9f42-5a5eb826e338" />
 
@@ -97,7 +97,7 @@ Next, we're going to run our script by running this command in our terminal:
 python good_morning.py
 ```
 
-After running, out output should look like this:
+After running, our output should look like this:
 
 <img width="362" height="142" alt="image" src="https://github.com/user-attachments/assets/d9d9a82b-94f8-407e-a989-726c0bfc59d0" />
 
