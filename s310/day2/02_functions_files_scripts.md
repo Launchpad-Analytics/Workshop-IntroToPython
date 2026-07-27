@@ -13,7 +13,7 @@ In this module, you will learn:
 # Session Setup
 During this session, we're going to utilize more of the features in our Google Colab environment. If you utilized colab for the first session's notebook, you can keep that same notebook active. If not, you can start a new Colab session by following this link*: [New Notebook](colab.new)
 
-(**Alternatively, if you chose to set up your local Python coding environment, you can follow along with your local environment. If you're not working with a linux system, then some of the command line inscructions may be different*)
+(**Alternatively, if you chose to set up your local Python coding environment, you can follow along with your local environment. If you're not working with a linux system, then some of the command line instructions may be different*)
 
 We won't actually need the notebook for most of this session (you can still use it for scratchwork), so we're going to configure our view by opening a Terminal tab and extending it so that it takes up most of our screen. The Terminal button can be found in the bottom-left corner of the screen:
 
@@ -36,7 +36,7 @@ We are currently inside the `/content` folder, which is the default folder for t
 ### What's in here? Use `ls` to list all of the files in the current directory
 <img width="280" height="150" alt="image" src="https://github.com/user-attachments/assets/97899847-34df-4ca6-b06f-45233aad4216" />
 
-Running `ls` from the `content/` directory tells us that the only thing inside of our current working directory is another directory called `sample_data/`. To quicky see what's inside of this nested directory, we can pass it to the ls command like this:
+Running `ls` from the `content/` directory tells us that the only thing inside of our current working directory is another directory called `sample_data/`. To quickly see what's inside of this nested directory, we can pass it to the ls command like this:
 
 `ls sample_data/`
 
@@ -112,11 +112,11 @@ print(f"Good Morning, {name}!")
 # Example Build: Personal Assistant Wake-up Message
 <img width="60%" height="30%" alt="image" src="https://github.com/user-attachments/assets/89cf51de-70bd-4a78-858f-db74ea7deb64" />
 
-> In this scenario, we're programming the software for a personal home tech product: a digital panel that displays weather information, news, and other customizable widgets to be displayed at a glance. The feature we'll be coding is the "Wake-up Routine", which plays after the user's morning alarm goas off and gives them the day's weather and news headlines.
+> In this scenario, we're programming the software for a personal home tech product: a digital panel that displays weather information, news, and other customizable widgets to be displayed at a glance. The feature we'll be coding is the "Wake-up Routine", which plays after the user's morning alarm goes off and gives them the day's weather and news headlines.
 
 ## Adding the first function: customizing the greeting message
 
-Using the same `good_morning.py` file, our first function will be to customize the greeting message based on the name of the user. The function will be called `greeting()`, and it will name the users name as it's 1 argument:
+Using the same `good_morning.py` file, our first function will be to customize the greeting message based on the name of the user. The function will be called `greeting()`, and it will take the user's name as its 1 argument:
 
 ```python
 name = "Kelly"
@@ -128,7 +128,7 @@ greeting(name)
 ```
 ***Remember: after you create a function, you must call that function in your script in order for the code to run***
 
-Save your script, and run in again from the terminal to verify that the greeting message still displays. You will repeat this process after every new element you add to your script:
+Save your script, and run it again from the terminal to verify that the greeting message still displays. You will repeat this process after every new element you add to your script:
 
 ```bash
 python good_morning.py
@@ -143,7 +143,7 @@ Today is Wednesday, July 29th
 The time is 8:34 AM
 ```
 
-In order to get the current date and time, we will use the `datetime` module, which is a **built-in** module of code that comes included with Python and contains several functions for achieving more complex tasks. In order to use those functions in our script, we first need to use an `import` statement to include the `datetime` module in our code. We will also need another module `zoneinfo` to get infromation about our specific timezone:
+In order to get the current date and time, we will use the `datetime` module, which is a **built-in** module of code that comes included with Python and contains several functions for achieving more complex tasks. In order to use those functions in our script, we first need to use an `import` statement to include the `datetime` module in our code. We will also need another module `zoneinfo` to get information about our specific timezone:
 
 ```python
 from datetime import datetime
@@ -167,7 +167,7 @@ Because `now_ny` is a variable of type `datetime`, it now has all of the methods
 today = f"Today is {now_ny.strftime('%A, %B %d, %Y')}"
 ```
 
-You don't need to memorize what each format code means, as you will often just look up the information when you're formatting datetimes for a specific task. [This post](https://www.programiz.com/python-programming/datetime/strftime) is an example resource you can use to loookup the right format codes you need. We'll use the same method to create a variable `current_time` with the time, and then add both statements to the greeting message.
+You don't need to memorize what each format code means, as you will often just look up the information when you're formatting datetimes for a specific task. [This post](https://www.programiz.com/python-programming/datetime/strftime) is an example resource you can use to lookup the right format codes you need. We'll use the same method to create a variable `current_time` with the time, and then add both statements to the greeting message.
 
 
 > script checkpoint: `good_morning.py`
@@ -277,13 +277,13 @@ def get_headlines():
   return [headline.strip() for headline in headlines]
 ```
 
-We're going to tackle the weather information last, so for now we'll make a skeleton function that returns the message template we want for our wake-up routine. This function will take a location as an argument, and return the current tempurature and forecasted high/low temperature forcast for the day in that location.
+We're going to tackle the weather information last, so for now we'll make a skeleton function that returns the message template we want for our wake-up routine. This function will take a location as an argument, and return the current temperature and forecasted high/low temperature forecast for the day in that location.
 
 ### Context Managers
-The second function, `get_headlines()`, reads in a series of news headlines (listed in `headlines.txt`) and returns them as a list. The `with` statement you see in this function is called a **context manager**, which is used to efficiently handle memory and resources within Python when interacting with external files.  The `'r'` argument being passed designated that the text file is being opened in "read mode", which means that no changes can be made to the text in the file itself. Within this code block, the list variable `headlines` is being created by reading each line of text and passing in to a list created by the `.readlines()` method.
+The second function, `get_headlines()`, reads in a series of news headlines (listed in `headlines.txt`) and returns them as a list. The `with` statement you see in this function is called a **context manager**, which is used to efficiently handle memory and resources within Python when interacting with external files.  The `'r'` argument being passed designates that the text file is being opened in "read mode", which means that no changes can be made to the text in the file itself. Within this code block, the list variable `headlines` is being created by reading each line of text and passing in to a list created by the `.readlines()` method.
 
 ### List Comprehensions
-Before we explain what's heppening in this `return` statement, copy the `with` block and paste it into a blank cell in your notebook. Then, call the `headlines` variable and oobserve the output. It should look something like this:
+Before we explain what's happening in this `return` statement, copy the `with` block and paste it into a blank cell in your notebook. Then, call the `headlines` variable and observe the output. It should look something like this:
 
 ```
 ['Local Park Welcomes Record-Breaking Number of Geese after Implementing Mandatory Soft-Rock Playlist\n',
