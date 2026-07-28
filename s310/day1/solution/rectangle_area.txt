@@ -1,0 +1,7 @@
+# set the values of rec_length and rec_width
+rec_length = 8
+rec_width = 5 
+# calculate the area and save it to the variable rec_area
+rec_area = rec_length * rec_width
+# print the area
+print(rec_area)

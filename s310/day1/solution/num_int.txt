@@ -1,0 +1,8 @@
+#replace the None values with your code
+num_int = 42
+num_float = float(num_int) 
+num_int_2 = int(num_float)
+
+print(num_int)
+print(num_float)
+print(num_int_2)

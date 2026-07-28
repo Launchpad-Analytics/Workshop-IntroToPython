@@ -1,0 +1,11 @@
+temp = 20
+unit = "C"
+
+if unit == "F":
+    temp_celsius = (temp - 32) * 5/9
+    print("Temperature in Celsius:", temp_celsius)
+elif unit == "C":
+    temp_fahrenheit = (temp * 9/5) + 32
+    print("Temperature in Fahrenheit:", temp_fahrenheit)
+else:
+    print("Unknown temperature unit")

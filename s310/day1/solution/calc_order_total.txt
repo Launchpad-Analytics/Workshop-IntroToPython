@@ -1,0 +1,6 @@
+# create a variable for the item price and set it to 5.99
+item_price = 5.99
+# calculate the total of purchasing 10 items at that price
+total_price = item_price * 10
+# print the total price
+print(total_price)
