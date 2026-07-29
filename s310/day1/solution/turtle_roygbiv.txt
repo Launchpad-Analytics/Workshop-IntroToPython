@@ -1,0 +1,19 @@
+clearscreen()
+setup(500, 500)
+T = Turtle()
+T.jumpto(-50, 150)
+
+colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+start_length = 300
+spacing = 50
+
+for c in colors:
+  T.color(c)
+  T.forward(start_length)
+  T.penup()
+  T.back(start_length)
+  T.right(90)
+  T.forward(spacing)
+  T.left(90)
+  T.pendown()
+  start_length *= 0.75
