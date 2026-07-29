@@ -1,6 +1,6 @@
 # Module Overview
 
-In this module, we're going to learn how to take the Python syntax we learned and give it legs. So far, we've been working with small snippets of code in notebooks, but real-world Python programs usually live in files and scripts that can be run again and again. In this lesson, we'll explore how to structure code into functions, work with external files, and build scripts that perform useful tasks.
+In this module, we're going to learn how to turn the Python syntax we've already learned into something that can actually do useful work. So far, we've been working with small snippets of code in notebooks, but real-world Python programs usually live in files and scripts that can be run again and again. In this lesson, we'll explore how to structure code into functions, work with external files, and build scripts that perform useful tasks.
 
 In this module, you will learn:
 
@@ -11,14 +11,13 @@ In this module, you will learn:
 - How to build a small project that combines these ideas into one workflow
 
 # Session Setup
-During this session, we're going to utilize more of the features in our Google Colab environment. If you utilized colab for the first session's notebook, you can keep that same notebook active. If not, you can start a new Colab session by following this link*: [New Notebook](colab.new)
+During this session, we're going to use more of the features in our Google Colab environment. If you used Colab for the first session's notebook, you can keep that same notebook open. If not, you can start a new Colab session by following this link: [New Notebook](colab.new)
 
-(**Alternatively, if you chose to set up your local Python coding environment, you can follow along with your local environment. If you're not working with a linux system, then some of the command line instructions may be different*)
+(*Alternatively, if you chose to set up your local Python coding environment, you can follow along there. If you're not working with a Linux system, some of the command line instructions may be different.*)
 
-We won't actually need the notebook for most of this session (you can still use it for scratchwork), so we're going to configure our view by opening a Terminal tab and extending it so that it takes up most of our screen. The Terminal button can be found in the bottom-left corner of the screen:
+We won't actually need the notebook for most of this session (you can still use it for scratch work), so we're going to configure our view by opening a Terminal tab and expanding it so that it takes up most of our screen. The Terminal button can be found in the bottom-left corner of the screen:
 
 <img width="1916" height="952" alt="image" src="https://github.com/user-attachments/assets/31818590-0984-4eba-8a0b-d75cef8d78fc" />
-
 
 When you're done, your Colab window might look something like this:
 <img width="1918" height="944" alt="20260711-0252-35 7921598" src="https://github.com/user-attachments/assets/af2a705c-5b6c-48ab-a9c8-e539975d7113" />
@@ -28,7 +27,7 @@ A terminal is a text-based user interface that lets you interact with your compu
 
 Here are some basic bash commands that you can run from the command line:
 
-### Where am I? Use `pwd` to print your "working directory", or what folder you're currently inside of
+### Where am I? Use `pwd` to print your working directory—the folder you're currently in
 <img width="314" height="164" alt="image" src="https://github.com/user-attachments/assets/7413f45b-a8d7-4c31-9658-3875cb731d8c" />
 
 We are currently inside the `/content` folder, which is the default folder for the Colab environment.
@@ -36,16 +35,16 @@ We are currently inside the `/content` folder, which is the default folder for t
 ### What's in here? Use `ls` to list all of the files in the current directory
 <img width="280" height="150" alt="image" src="https://github.com/user-attachments/assets/97899847-34df-4ca6-b06f-45233aad4216" />
 
-Running `ls` from the `content/` directory tells us that the only thing inside of our current working directory is another directory called `sample_data/`. To quickly see what's inside of this nested directory, we can pass it to the ls command like this:
+Running `ls` from the `/content` directory tells us that the only thing inside our current working directory is another directory called `sample_data/`. To quickly see what's inside this nested directory, we can pass it to the `ls` command like this:
 
 `ls sample_data/`
 
-This lists all of the files in this lower directory without having to navigate to it:
+This lists all of the files in that lower directory without having to navigate to it:
 <img width="1074" height="188" alt="image" src="https://github.com/user-attachments/assets/290c6d29-de69-43ed-b2db-a5c2e798c9de" />
 
-This `sample_data/` folder contains some popular practice datasets for machine learning, which Colab has included in the standard environment.
+This `sample_data/` folder contains some popular practice datasets for machine learning, which Colab includes in the standard environment.
 
-Similarly, we can also list the files that are in a higher level directory than our current working directory by using `ls ..`
+Similarly, we can list the files in a higher-level directory than our current working directory by using `ls ..`
 
 <img width="910" height="212" alt="image" src="https://github.com/user-attachments/assets/17d60280-d33d-4349-9270-34319c73fb57" />
 
@@ -70,19 +69,19 @@ pip install -r requirements.txt
 ```
 
 # Creating our first script:
-In this context, a script is a file that stores Python instructions so they can be run in order whenever needed. Instead of typing commands one at a time in a notebook or terminal, a script lets you save and reuse a full workflow in a single file.
+In this context, a script is a file that stores Python instructions so they can be run in order whenever needed. Instead of typing commands one at a time in a notebook or terminal, a script lets you save and reuse an entire workflow in a single file.
 
-Using our same terminal window, we're going to create an empty python file with the following command:
+Using the same terminal window, we're going to create an empty Python file with the following command:
 
 ```bash
 touch good_morning.py
 ```
 
-After a brief moment, your new python file should appear in the files list on the left. Double-click the script file to open it in a new tab. The terminal tab will be hidden by this new file, but you can drag it down below the script file to split the window if it suits your preference:
+After a brief moment, your new Python file should appear in the list of files on the left. Double-click the script file to open it in a new tab. The terminal tab will be hidden behind this new file, but you can drag it down below the script file to split the window if you prefer:
 
 <img width="1916" height="938" alt="image" src="https://github.com/user-attachments/assets/d79e2f57-fe6b-482a-9f42-5a5eb826e338" />
 
-To start, we're going to create as basic of a script as we can. We're going to create a single string variable `name`, and then print a custom greeting message using whatever name is passed to that variable:
+To start, we're going to create as basic a script as we can. We're going to create a single string variable called `name`, and then print a custom greeting message using whatever name is passed to that variable:
 
 ```python title
 # good_morning.py
@@ -91,17 +90,17 @@ name = "Kelly"
 
 print("Good Morning, " + name + "!")
 ```
-Next, we're going to run our script by running this command in our terminal:
+Next, we're going to run our script with the following command in our terminal:
 
 ```
 python good_morning.py
 ```
 
-After running, our output should look like this:
+After running it, our output should look like this:
 
 <img width="362" height="142" alt="image" src="https://github.com/user-attachments/assets/d9d9a82b-94f8-407e-a989-726c0bfc59d0" />
 
-There's often many different ways to achieve the same result in programming, and each method may be better suited for what you want to accomplish. The concatenating of the text strings to build our message works well, but we can also use what's called an **f-string** to create better string templates and embed values directly. We're going to do that now with our print statement:
+There are often many different ways to achieve the same result in programming, and each method may be better suited to what you want to accomplish. The concatenation of the text strings to build our message works well, but we can also use what's called an **f-string** to create better string templates and embed values directly. We're going to do that now with our print statement:
 
 ```python
 name = "Kelly"
@@ -112,11 +111,11 @@ print(f"Good Morning, {name}!")
 # Example Build: Personal Assistant Wake-up Message
 <img width="60%" height="30%" alt="image" src="https://github.com/user-attachments/assets/89cf51de-70bd-4a78-858f-db74ea7deb64" />
 
-> In this scenario, we're programming the software for a personal home tech product: a digital panel that displays weather information, news, and other customizable widgets to be displayed at a glance. The feature we'll be coding is the "Wake-up Routine", which plays after the user's morning alarm goes off and gives them the day's weather and news headlines.
+> In this scenario, we're programming the software for a personal home-tech product: a digital panel that displays weather information, news, and other customizable widgets at a glance. The feature we'll be coding is the "Wake-up Routine," which plays after the user's morning alarm goes off and gives them the day's weather and news headlines.
 
 ## Adding the first function: customizing the greeting message
 
-Using the same `good_morning.py` file, our first function will be to customize the greeting message based on the name of the user. The function will be called `greeting()`, and it will take the user's name as its 1 argument:
+Using the same `good_morning.py` file, our first function will customize the greeting message based on the user's name. The function will be called `greeting()`, and it will take the user's name as its single argument:
 
 ```python
 name = "Kelly"
@@ -126,15 +125,15 @@ def greeting(user_name):
 
 greeting(name)
 ```
-***Remember: after you create a function, you must call that function in your script in order for the code to run***
+***Remember: after you create a function, you must call it in your script for the code to run.***
 
-Save your script, and run it again from the terminal to verify that the greeting message still displays. You will repeat this process after every new element you add to your script:
+Save your script and run it again from the terminal to verify that the greeting message still displays. You will repeat this process after every new element you add to your script:
 
 ```bash
 python good_morning.py
 ```
 
-## Using the built-in `datetime` module to display the current date time
+## Using the built-in `datetime` module to display the current date and time
 The next step for our wake-up routine is to give the user the date and the current time, like this:
 
 ```
@@ -143,7 +142,7 @@ Today is Wednesday, July 29th
 The time is 8:34 AM
 ```
 
-In order to get the current date and time, we will use the `datetime` module, which is a **built-in** module of code that comes included with Python and contains several functions for achieving more complex tasks. In order to use those functions in our script, we first need to use an `import` statement to include the `datetime` module in our code. We will also need another module `zoneinfo` to get information about our specific timezone:
+To get the current date and time, we will use the `datetime` module, which is a **built-in** module of code that comes included with Python and contains several functions for handling more complex tasks. To use those functions in our script, we first need to use an `import` statement to include the `datetime` module in our code. We will also need another module, `zoneinfo`, to get information about our specific timezone:
 
 ```python
 from datetime import datetime
@@ -155,7 +154,7 @@ A datetime is a Python object that represents both a date and a time, making it 
 
 ### Using `strftime` to format the date and time
 
-Using the `datetime.now()` function, we're going to grab the current datetime (using NYC as our location reference) and save it to a variable called `now_ny`:
+Using the `datetime.now()` function, we're going to grab the current datetime (using New York City as our location reference) and save it to a variable called `now_ny`:
 
 ```python
 now_ny = datetime.now(ZoneInfo("America/New_York"))
@@ -167,8 +166,7 @@ Because `now_ny` is a variable of type `datetime`, it now has all of the methods
 today = f"Today is {now_ny.strftime('%A, %B %d, %Y')}"
 ```
 
-You don't need to memorize what each format code means, as you will often just look up the information when you're formatting datetimes for a specific task. [This post](https://www.programiz.com/python-programming/datetime/strftime) is an example resource you can use to lookup the right format codes you need. We'll use the same method to create a variable `current_time` with the time, and then add both statements to the greeting message.
-
+You don't need to memorize what each format code means, because you can often look up the information when you're formatting datetimes for a specific task. [This post](https://www.programiz.com/python-programming/datetime/strftime) is an example resource you can use to look up the right format codes you need. We'll use the same method to create a variable called `current_time` for the time, and then add both statements to the greeting message.
 
 > script checkpoint: `good_morning.py`
 ```python
@@ -194,16 +192,16 @@ def greeting(name):
 
 greeting("Kelly")
 ```
-***Run the `good_morning.py` script in your terminal to verify that the script works***
+***Run the `good_morning.py` script in your terminal to verify that it works.***
 
-We've also added the `time.sleep()` function to the script to give the output the appearance of a more natural delay.
+We've also added the `time.sleep()` function to the script to make the output appear to have a more natural delay.
 
-## Code Improvement: Using lists and loops to optimize our code.
-Notice the repeated `print()` and `time.sleep()` function calls? While it's manageable for the short list of 3 messages we have currently, it will quickly become slow and inefficient once the number of messages start to grow. A more efficient way to code this functionality is to create a list of all of the messages we want to send, and then create a **for loop** to print each message to the console:
+## Code Improvement: Using lists and loops to optimize our code
+Notice the repeated `print()` and `time.sleep()` function calls. While it's manageable for the short list of three messages we currently have, it will quickly become slow and inefficient once the number of messages starts to grow. A more efficient way to code this functionality is to create a list of all of the messages we want to send, and then create a **for loop** to print each message to the console:
 
 ```python
 messages = [greeting, today, current_time]
-  for m in messages:
+for m in messages:
     time.sleep(2)
     print(m)
 
@@ -211,9 +209,9 @@ greeting("Kelly")
 ```
 
 ## Code Improvement: Returning values instead of printing them
-So far, we've been printing our messages to the console, which we've been using to act as our display screen as we test our code. The problem is that these test statements aren't allowing us to do anything with this data, like pass it off to the hardware component that would be displaying these messages on the product screen. So, the first major functionality improvement we're going to make to this script is to return a list containing our greeting, date, and time messages from the `greeting()` function instead of printing them to the console. 
+So far, we've been printing our messages to the console, which we've been using as our display screen while testing our code. The problem is that these test statements don't let us do anything with this data, such as pass it off to the hardware component that would display these messages on the product screen. So, the first major functionality improvement we're going to make to this script is to return a list containing our greeting, date, and time messages from the `greeting()` function instead of printing them to the console.
 
-Now that our `greeting()` function gives us access to the messages as data, we will use the function to generate a list of messages in a variable called `message_list` and implement the similar logic:
+Now that our `greeting()` function gives us access to the messages as data, we will use it to generate a list of messages in a variable called `message_list` and implement similar logic:
 
 > script checkpoint: `good_morning.py`
 ```python
@@ -242,7 +240,7 @@ for m in message_list:
 
 ## Code Improvement: One Task Per Function
 
-We've expanded our initial `greeting` function to also include information about time and date, but what if we just wanted the simple greeting by itself? With this function, we would have to parse out the greeting from the rest of the date and time information, which would quickly show us why it would be better to have a separate function for each logical piece of information.
+We've expanded our initial `greeting` function to also include information about the time and date, but what if we just wanted the simple greeting by itself? With this function, we would have to parse out the greeting from the rest of the date and time information, which would quickly show us why it would be better to have a separate function for each logical piece of information.
 
 We're going to keep the greeting message in the `greeting()` function, but move the time and date messages to a new function called `time_and_date()` that returns the `today` and `current_time` variables:
 
@@ -259,31 +257,31 @@ def time_and_date(time_zone):
 ```
 
 ## Adding Weather and News Message Functions
-Copy the following two functions and add them to your script under the `time_and_date()` function 
+Copy the following two functions and add them to your script below the `time_and_date()` function:
 
 ```python
 def get_weather(location):
-  # Use the weather helper functions to create a weather update message.
-  weather_info = None
-  weather_message = f"The current temperature in {location} is {None} with a high of {None} and a low of {None}"
-  return weather_message
+ # Use the weather helper functions to create a weather update message.
+ weather_info = None
+ weather_message = f"The current temperature in {location} is {None} with a high of {None} and a low of {None}"
+ return weather_message
 
 
 def get_headlines():
-  # Read the saved headlines from a text file and clean each line.
-  with open('headlines.txt', 'r') as file:
-    headlines = file.readlines()
+ # Read the saved headlines from a text file and clean each line.
+ with open('headlines.txt', 'r') as file:
+   headlines = file.readlines()
 
-  return [headline.strip() for headline in headlines]
+ return [headline.strip() for headline in headlines]
 ```
 
-We're going to tackle the weather information last, so for now we'll make a skeleton function that returns the message template we want for our wake-up routine. This function will take a location as an argument, and return the current temperature and forecasted high/low temperature forecast for the day in that location.
+We're going to tackle the weather information last, so for now we'll make a skeleton function that returns the message template we want for our wake-up routine. This function will take a location as an argument and return the current temperature, plus the forecasted high and low temperatures for that location.
 
 ### Context Managers
-The second function, `get_headlines()`, reads in a series of news headlines (listed in `headlines.txt`) and returns them as a list. The `with` statement you see in this function is called a **context manager**, which is used to efficiently handle memory and resources within Python when interacting with external files.  The `'r'` argument being passed designates that the text file is being opened in "read mode", which means that no changes can be made to the text in the file itself. Within this code block, the list variable `headlines` is being created by reading each line of text and passing in to a list created by the `.readlines()` method.
+The second function, `get_headlines()`, reads a series of news headlines (listed in `headlines.txt`) and returns them as a list. The `with` statement you see in this function is called a **context manager**, which is used to efficiently handle memory and resources in Python when interacting with external files. The `'r'` argument being passed designates that the text file is being opened in read mode, which means that no changes can be made to the file itself. Within this code block, the list variable `headlines` is being created by reading each line of text and passing it into a list created by the `.readlines()` method.
 
 ### List Comprehensions
-Before we explain what's happening in this `return` statement, copy the `with` block and paste it into a blank cell in your notebook. Then, call the `headlines` variable and observe the output. It should look something like this:
+Before we explain what's happening in this `return` statement, copy the `with` block and paste it into a blank cell in your notebook. Then call the `headlines` variable and observe the output. It should look something like this:
 
 ```
 ['Local Park Welcomes Record-Breaking Number of Geese after Implementing Mandatory Soft-Rock Playlist\n',
@@ -293,22 +291,22 @@ Before we explain what's happening in this `return` statement, copy the `with` b
  'Regional Airport Flight Delays Plummet 40% after Replacing Boarding Queue with Mildly Competitive Musical Chairs']
 ```
 
-When reading in the text file, the code is picking up the invisible newline (part of a category of **whitespace characters**) characters (`\n`) at the end of each line. We don't want these characters to mistakenly be read by the wake-up routine, so we need to programmatically loop through each list item and remove these characters. A function with this looping and cleaning logic fully written out might look like this:
+When reading the text file, the code is picking up the invisible newline characters (`\n`) at the end of each line. These are part of a category of **whitespace characters**. We don't want these characters to be read incorrectly by the wake-up routine, so we need to loop through each list item and remove them. A function with this looping and cleaning logic fully written out might look like this:
 
 ```python
 def get_headlines():
-  with open('headlines.txt', 'r') as file:
-    headlines = file.readlines()
+ with open('headlines.txt', 'r') as file:
+   headlines = file.readlines()
   
-  headlines_clean = []
-  for line in headlines:
-    line_clean = line.strip()
-    headlines_clean.append(line_clean)
+ headlines_clean = []
+ for line in headlines:
+   line_clean = line.strip()
+   headlines_clean.append(line_clean)
   
-  return headlines_clean
+ return headlines_clean
 ```
 
-In this function, the code makes it easy to read exactly what's happening to clean each line of text, but the last  5 lines of this function can also be collapsed into a single line of code by using a powerful tool called a **list comprehension**:
+In this function, the code makes it easy to see exactly what's happening to clean each line of text, but the last five lines of this function can also be collapsed into a single line of code by using a powerful tool called a **list comprehension**:
 
 `return [headline.strip() for headline in headlines]`
 
@@ -317,7 +315,7 @@ Readable code is easier for people to understand and maintain, while efficient c
 
 ## Code Improvement: Message List
 
-You should now have 4 separate functions that are returning specific pieces of information needed to build the wake-up routine message. Keeping our same `message_list` variable and looping code that's at the bottom of our script, we're going to set `message_list` equal to an empty list, which we will use to add our messages to from all of our functions, along with some custom messages that we'll add to fill in the wake-up routine:
+You should now have four separate functions that return the specific pieces of information needed to build the wake-up routine message. Keeping the same `message_list` variable and the looping code at the bottom of our script, we're going to set `message_list` to an empty list, which we will use to add messages from all of our functions, along with some custom messages that we'll add to complete the wake-up routine:
 
 ```python
 name = "Kelly"
@@ -330,8 +328,8 @@ message_list += get_headlines()
 message_list.append("Have a great day!")
 
 for m in message_list:
-  time.sleep(1)
-  print(m)
+ time.sleep(1)
+ print(m)
 ```
 
 > code checkpoint: `good_morning.py`
@@ -341,27 +339,25 @@ from zoneinfo import ZoneInfo
 import time
 
 def greeting(name):
-  greeting_message = f"Good Morning, {name}!"
-  return greeting_message
+ greeting_message = f"Good Morning, {name}!"
+ return greeting_message
 
 
 def time_and_date(timezone):
-  now_ny = datetime.now(ZoneInfo(timezone))
-  today = f"Today is {now_ny.strftime('%A, %B %d, %Y')}"
-  current_time = f"The time is {now_ny.strftime('%I:%M %p')}"
+ now_ny = datetime.now(ZoneInfo(timezone))
+ today = f"Today is {now_ny.strftime('%A, %B %d, %Y')}"
+ current_time = f"The time is {now_ny.strftime('%I:%M %p')}"
 
-  return [today, current_time]
-
+ return [today, current_time]
 def get_weather(location):
-  weather_info = None
-  weather_message = f"The current temperature in {location} is {None} with a high of {None} and a low of {None}"
-  return weather_message
-
+ weather_info = None
+ weather_message = f"The current temperature in {location} is {None} with a high of {None} and a low of {None}"
+ return weather_message
 def get_headlines():
-  with open('headlines.txt', 'r') as file:
-    headlines = file.readlines()
+ with open('headlines.txt', 'r') as file:
+   headlines = file.readlines()
   
-  return [headline.strip() for headline in headlines]
+ return [headline.strip() for headline in headlines]
 
 name = "Kelly"
 message_list = []
@@ -373,13 +369,13 @@ message_list += get_headlines()
 message_list.append("Have a great day!")
 
 for m in message_list:
-  time.sleep(1)
-  print(m)
+ time.sleep(1)
+ print(m)
 ```
 
 ## Finishing the Weather Function
 
-Included in the workshop files is a script that outputs the current weather and the forecasted high/low temperatures for a given location. This script can be passed the name of a city from the commandline using the `--location` flag. For example, if we wanted to get the weather in Chicago, we would run this line:
+Included in the workshop files is a script that outputs the current weather and the forecasted high and low temperatures for a given location. This script can be passed the name of a city from the command line using the `--location` flag. For example, if we wanted to get the weather in Chicago, we would run this line:
 
 ```bash
 python get_weather_info.py --city Chicago
@@ -397,9 +393,9 @@ Min Temp: 76
 
 ### Discussion: Inspecting the `get_weather_info.py` script
 
-Open up the `get_weather_info.py` script and explore the contents as you answer these questions:
+Open the `get_weather_info.py` script and explore its contents as you answer these questions:
 * In plain language, what is this code doing?
-* What elements of this script are similar to the one that we're building?
+* What elements of this script are similar to the one we are building?
 * Which elements are different?
 * How can we use this code to finish our weather message function?
 
@@ -469,13 +465,13 @@ We can treat this `get_weather_info.py` script as a module of functions we can u
 from get_weather_info import get_city_latlong, weather_lookup
 ```
 
-Return to the `get_weather_info()` function from earlier. It's already being passed the `location` as an argument, so we just need to pass it to the `get_city_latlong()` function and save the results to the `city_coords` variable. Additionally, instead of the `weather_info` variable, we actually need 3 separate variables to capture the data coming from the `weather_lookup()` function. We can write a similar line of code to the original script:
+Return to the `get_weather()` function from earlier. It is already being passed the `location` as an argument, so we just need to pass it to the `get_city_latlong()` function and save the results to the `city_coords` variable. Additionally, instead of the `weather_info` variable, we actually need three separate variables to capture the data coming from the `weather_lookup()` function. We can write a similar line of code to the one in the original script:
 
 ```python
 current_temp, max_temp, min_temp = weather_lookup(city_coords)
 ```
 
-We now have everything to complete the weather message function, and can plug the `current_temp`, `max_temp`, and `min_temp` variables into the string template. Out new `get_weather()` function should look like this:
+We now have everything we need to complete the weather message function, and we can plug the `current_temp`, `max_temp`, and `min_temp` variables into the string template. Our new `get_weather()` function should look like this:
 
 ```python
 def get_weather(location):
@@ -486,7 +482,7 @@ def get_weather(location):
   return weather_message
 ```
 
-Run your `good_morning.py` script to observe the real weather data being returned. Remember that we hard coded the city of Pittsburgh in the list of messages at the bottom, but you've been given some hints to figure out how to make this value more dynamic and user-driven.
+Run your `good_morning.py` script to observe the real weather data being returned. Remember that we hard-coded the city of Pittsburgh in the list of messages at the bottom, but you have been given some hints to figure out how to make this value more dynamic and user-driven.
 
 ### Code Improvement: Dynamic Input of User Data
 
@@ -508,7 +504,7 @@ for m in message_list:
 ```
 
 ### Code Improvement: Last Mile
-When looking at the `get_weather_info.py` script, we talked about the importance of the `if __name__ == "__main__":` expression and the `main()` function in a script, so the last finishing touch we add to this script will be to implement our core logic of constructing our message list within these blocks.
+When looking at the `get_weather_info.py` script, we talked about the importance of the `if __name__ == "__main__":` expression and the `main()` function in a script, so the last finishing touch we'll add to this script will be to implement our core logic for constructing the message list within these blocks.
 
 > code checkpoint: `good_morning.py`:
 ```python
